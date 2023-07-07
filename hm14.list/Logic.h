@@ -5,7 +5,7 @@
 
 using namespace std;
 
-#define ROW 7
+#define ROW 12
 
 enum navikeys {
 
@@ -23,9 +23,17 @@ enum menutitles {
     REMOVE_FROM_HEAD,
     REMOVE_FROM_TAIL,
     REMOVE_ALL,
+
+    INSERT,
+    REMOVE_AT,
+    FIND,
+    REPLACE,
+    REVERSE,
+
     EXIT
 };
 
 void DisplayMenu(string menu[ROW], int select);
 
 string InputData(string& str);
+int InputData(int position);

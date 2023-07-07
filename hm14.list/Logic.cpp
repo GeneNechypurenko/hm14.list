@@ -22,7 +22,19 @@ void DisplayMenu(string menu[ROW], int select)
 
 string InputData(string& str) {
 
-	cout << "¬вед≥ть щось там: ";
+	cout << "¬вед≥ть ≥нфо: ";
 	getline(cin, str);
 	return str;
+}
+
+int InputData(int position) {
+
+	cout << "¬вед≥ть ≥ндекс: ";
+	cin >> position;
+	if (cin.rdbuf()->in_avail() != 0)
+	{
+		cin.clear();
+		cin.ignore((numeric_limits<streamsize>::max)(), '\n');
+	}
+	return position;
 }

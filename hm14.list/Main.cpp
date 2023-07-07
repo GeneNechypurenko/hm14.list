@@ -21,11 +21,17 @@ int main() {
     menu[3] = "Видалити із списоку с початку";
     menu[4] = "Видалити із списоку с кінця";
     menu[5] = "Видалити список";
-    menu[6] = "Вихід";
+    menu[6] = "Insert";
+    menu[7] = "Remove at";
+    menu[8] = "Find";
+    menu[9] = "Replace";
+    menu[10] = "Reverse";
+    menu[11] = "Вихід";
 
     int select = 0;
 
     string str;
+    int position = 0;
 
     while (true) {
 
@@ -81,6 +87,52 @@ int main() {
             case REMOVE_ALL:
                 system("cls");
                 list.RemoveAll();
+                system("pause");
+                break;
+
+            case INSERT:
+                system("cls");
+                list.Insert(InputData(str), InputData(position));
+                system("pause");
+                break;
+
+            case REMOVE_AT:
+                system("cls");
+                list.RemoveAt(InputData(position));
+                system("pause");
+                break;
+
+            case FIND:
+                system("cls");
+
+                position = list.Find(InputData(str));
+
+                if (position != -1)
+                    cout << "Позиція елементу в списку = " << position << endl;
+
+                else
+                    cout << "Елемент в списку не знайдено" << endl;
+
+                system("pause");
+                break;
+
+            case REPLACE:
+                system("cls");
+
+                position = list.Replace(InputData(str), "NEWDATA");
+
+                if (position != -1)
+                    cout << "Позиція елементу в списку " << position << " зміненна" << endl;
+
+                else
+                    cout << "Елемент в списку не знайдено" << endl;
+
+                system("pause");
+                break;
+
+            case REVERSE:
+                system("cls");
+                list.Reverse();
                 system("pause");
                 break;
 
